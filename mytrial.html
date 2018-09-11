@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1>{{.Pagetitle}}<h1>
+<div style="background-color:Tomato;color:white;padding:20px;">
+<h1 style="border:2px solid DodgerBlue;">Welcome World...</h1>
+</div>
+<p>Select a  flower from the list.</p>
+<select id="mySelect" onchange="myFunction()">
+
+{{range .NeeoCoverage}}
+       
+            <option>{{.Name}}</option>
+    {{end}}
+</select>
+<p id="demo"></p>
+<script>
+
+function myFunction() {
+    var x = document.getElementById("mySelect").value;
+    document.getElementById("demo").innerHTML = "You selected: " + x;
+}
+</script>
+</body>
+</html>

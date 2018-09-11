@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<h3>{{.Names}}<h3>
+<head>
+  <meta charset="UTF-8" />
+</head>
+<body>
+<div>
+  <form method="POST" action="/new">     
+      <p>Select a  name from the list.</p>
+<select id="mySelect" onchange="myFunction()">
+{{range .Employer}}
+       
+            <option>{{.Name}}</option>
+    {{end}}
+</select>
+<select id="mySelected" onchange="myFunctions()">
+{{range .NeeoCoverage}}
+       
+            <option>{{.Named}}</option>
+    {{end}}
+</select>
+<p id="demo"></p>
+<script>
+function myFunction() {
+    var x = document.getElementById("mySelect").value;
+    document.getElementById("demo").innerHTML = "You selected: " + x;
+}
+</script>
+<p id="demos"></p>
+<script>
+function myFunctions() {
+    var x = document.getElementById("mySelected").value;
+    document.getElementById("demos").innerHTML = "You selected: " + x;
+}
+</script>
+  </form>
+</div>
+</body>
+</html>

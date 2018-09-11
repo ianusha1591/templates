@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Style the header */
+header {
+    background-color: #666;
+    padding: 30px;
+    text-align: center;
+    font-size: 35px;
+    color: white;
+}
+nav {
+    float: left;
+    width: 30%;
+    height: 300px; /* only for demonstration, should be removed */
+    background: #ccc;
+    padding: 20px;
+}
+
+/* Style the list inside the menu */
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+article {
+    float: left;
+    padding: 20px;
+    width: 70%;
+    background-color: #f1f1f1;
+    height: 300px; /* only for demonstration, should be removed */
+}
+section:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Style the footer */
+footer {
+    background-color: #777;
+    padding: 10px;
+    text-align: center;
+    color: white;
+}
+@media (max-width: 600px) {
+    nav, article {
+        width: 100%;
+        height: auto;
+    }
+}
+</style>
+</head>
+<body>
+<header>
+  <h3>{{.Names}}<h3>
+</header>
+<section>
+  <nav>
+    <ul>
+      <li><a href="#">Flowers</a></li>
+      <li><a href="#">Names</a></li>
+    </ul>
+  </nav>
+<article>
+<div>
+<center>
+  <form method="POST" action="/neww">     
+      <p>Select a  name from the list.</p>
+<select id="mySelect" onchange="myFunction()">
+{{range .Employer}}
+       
+            <option>{{.Name}}</option>
+    {{end}}
+</select>
+<select id="mySelected" onchange="myFunctions()">
+{{range .NeeoCoverage}}
+       
+            <option>{{.Named}}</option>
+    {{end}}
+</select>
+<p id="demo"></p>
+<script>
+function myFunction() {
+    var x = document.getElementById("mySelect").value;
+    document.getElementById("demo").innerHTML = "You selected: " + x;
+}
+</script>
+<p id="demos"></p>
+<script>
+function myFunctions() {
+    var x = document.getElementById("mySelected").value;
+    document.getElementById("demos").innerHTML = "You selected: " + x;
+}
+</script>
+  </form>
+</center>
+</div>
+</article>
+</section>
+<footer>
+  <p>All the best!Thank you</p>
+</footer>
+
+</body>
+</html>
+</body>
+</html>
