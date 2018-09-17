@@ -1,0 +1,15 @@
+{{ define "title" }}{{.Title}}{{ end }}
+
+{{ define "cont" }}
+  <h2>{{.Title}}</h2>
+  {{range .Acts}}
+    <p>
+      {{ .Name }} hello, your habits are :
+     
+        {{range .Hab}}
+{{ . }}
+        {{end}}
+     
+    </p>
+  {{end}}
+{{ end }}
